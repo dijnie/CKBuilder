@@ -1,29 +1,52 @@
-# CKBuilder Weekly Report — Week 1
+# Builder Track Weekly Report — Week 1
 
-**Practice date:** November 18, 2026  
-**Focus:** Building, deploying, and testing the TypeScript `hello-world` script
+**Name:** dijnie
 
-**Onboarding:** Local OffCKB setup and deployment were completed before submission.
+**Practice date:** November 18, 2026
 
-## Learning resources
+## Courses and resources
 
 - [How CKB Works](https://docs.nervos.org/docs/getting-started/how-ckb-works)
 - [CKB Academy Lessons 1 and 2](https://academy.ckb.dev/courses)
 - [Introduction to Script](https://docs.nervos.org/docs/script/intro-to-script)
 
-CKB transactions consume live input Cells and create new output Cells. A Lock Script controls whether an input may be spent. A Type Script can enforce rules on inputs and outputs. A deployment stores code in a Cell for later transactions to reference and execute.
+## Key learnings
+
+- A CKB transaction consumes live input Cells and creates new output Cells. An input's Lock Script checks whether it can be spent. A Type Script can enforce rules on inputs and outputs.
+- The deployment transaction stored the contract bytecode in a code Cell. The execution transaction referenced that Cell through `cell_deps` and used `hello-world` as the Type Script on output `0`.
+- The mock run printed a WASI experimental warning. I checked the script's return code and the Jest summary to verify the result. The Type Script returned `0`, and Jest reported one passing test.
 
 ## Practical progress
 
-| Exercise | Result | Evidence |
-| --- | --- | --- |
-| Build and deploy the TypeScript `hello-world` template | OffCKB compiled `hello-world.bc` and confirmed the deployment on Pudge Testnet. The code Cell is output `0`. | [Deployment screenshot](screenshot/hello-world-testnet-deployment.png), [Testnet Explorer](https://testnet.explorer.nervos.org/transaction/0x897b1344d9c075eaa50432013ca38ce9c3602fa1d534262afec27c5a61bed51f), [deployment metadata](work/deployment/scripts.json) |
-| Run the mock test | One test passed. The `hello-world` Type Script returned `0` and used 3,957,269 cycles in the mock run. | [Passing mock test](screenshot/hello-world-mock-test-pass.png) |
-| Use the deployed contract on Pudge | A separate transaction created output `0` with `hello-world` as its Type Script and was confirmed in block 23,099,987. The preflight estimate was 5,601,907 cycles for the transaction. | [Execution screenshot](screenshot/hello-world-testnet-execution.png), [Testnet Explorer](https://testnet.explorer.nervos.org/transaction/0x1aa3a43b00f9e3f03c1154ea4e1c2f6c4f72e36747724eed617b41d0b1e9aeb8) |
+- Built the OffCKB TypeScript `hello-world` template into `hello-world.bc`. The [deployment transaction](https://testnet.explorer.nervos.org/transaction/0x897b1344d9c075eaa50432013ca38ce9c3602fa1d534262afec27c5a61bed51f) was confirmed on Pudge Testnet and stored the bytecode at output `0`. [Deployment metadata](work/deployment/scripts.json)
+- Ran the `hello-world` mock test. The Type Script used **3,957,269 cycles** in the mock run.
+- Sent a separate [execution transaction](https://testnet.explorer.nervos.org/transaction/0x1aa3a43b00f9e3f03c1154ea4e1c2f6c4f72e36747724eed617b41d0b1e9aeb8) on Pudge that used the deployed contract as an output Type Script. It was confirmed in block **23,099,987**. The preflight estimate for the transaction was **5,601,907 cycles**.
 
-[Full terminal log](evidence/testnet-terminal-log.txt) for the deployment, mock test, and transaction that used the deployed script.
+## Environment
 
-## Screenshots
+- **Onboarding** — Completed the local OffCKB setup and deployment. The local node listened on port `8114` and the RPC proxy on `28114`.
+- **Week 1 project** — OffCKB, TypeScript, Node.js, npm, Jest, and a shared Pudge Testnet wallet. [Project setup and scripts](work/README.md)
+
+From the repository root, build the contract and run the mock test:
+
+```bash
+cd week-01/work
+npm ci
+npm run build
+npm run test:only -- --runInBand tests/hello-world.mock.test.ts
+```
+
+With a funded wallet configured through `TESTNET_PRIVATE_KEY_FILE`, the Testnet commands are:
+
+```bash
+npm run deploy:testnet
+npm run use:testnet -- --dry-run
+npm run use:testnet
+```
+
+## Evidence
+
+[Full terminal log](evidence/testnet-terminal-log.txt) covering the Testnet deployment, mock test, and execution transaction.
 
 ### OffCKB devnet startup
 
@@ -40,36 +63,6 @@ CKB transactions consume live input Cells and create new output Cells. A Lock Sc
 ### Pudge Testnet execution
 
 ![Terminal showing the transaction that uses hello-world committed in block 23099987](screenshot/hello-world-testnet-execution.png)
-
-## Reproduce the exercises
-
-To build and run the mock test, use the following commands from the repository root:
-
-```bash
-cd week-01/work
-npm ci
-npm run build
-npm run test:only -- --runInBand tests/hello-world.mock.test.ts
-```
-
-To repeat the Testnet deployment, create or sync the shared wallet from the repository root and fund it through the faucet. Copy `week-01/work/.env.example` to `week-01/work/.env` if needed. Then run `npm run deploy:testnet` from `week-01/work`.
-
-### Use the deployed script on Pudge
-
-From `week-01/work`, run the first command to estimate execution cycles. Run the second when ready to broadcast a transaction that creates an output using the deployed `hello-world` contract as its Type Script.
-
-```bash
-npm run use:testnet -- --dry-run
-npm run use:testnet
-```
-
-The command uses the shared Pudge wallet and the contract already recorded in `deployment/scripts.json`. It prints the new transaction's Explorer link and waits for confirmation.
-
-## Personal reflection
-
-I waited for OffCKB to report `tx committed.` and used the deployment metadata to identify the code Cell at output index `0`. Then I ran the mock test and checked the Type Script's return code and Jest's result to see how the script executed.
-
-The mock run printed a WASI experimental warning. I checked the test summary and the script output to interpret the run. Jest reported one passing test, and the Type Script returned `0`. I also sent a separate Pudge transaction that referenced the code Cell and used `hello-world` as an output Type Script.
 
 ## Next week
 
