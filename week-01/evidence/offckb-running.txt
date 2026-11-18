@@ -1,0 +1,10 @@
+v26.13.0
+0.4.13
+$ offckb node
+Launching CKB devnet Node...
+CKB devnet is ready at http://127.0.0.1:8114.
+Follow the full node log with: offckb logs -f
+CKB devnet RPC Proxy server running on http://127.0.0.1:28114
+(node:6088) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+send_transaction: 0x98bf5d14c0138561b1c8e42c4260500dd15ebf9da8314a9a42067c80761a1b22

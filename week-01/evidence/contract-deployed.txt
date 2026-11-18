@@ -1,0 +1,20 @@
+$ offckb deploy --network devnet --yes --target /tmp/ckbuilder-week01/always-success --output week-01/deployment
+🚀 Preparing to deploy 1 contract(s):
+   📄 always-success
+
+   📁 Deployment artifacts will be saved to: /home/tid/CKBuilder/week-01/deployment
+   🌐 Network: devnet
+   🔑 Using default private key
+   🔄 Type ID: disabled (immutable)
+contract always-success deployed, tx hash: 0x98bf5d14c0138561b1c8e42c4260500dd15ebf9da8314a9a42067c80761a1b22
+wait for tx confirmed on-chain...
+tx committed.
+
+📦 Saving deployment artifacts for 1 contract(s)...
+- 📄 Saving artifacts for always-success...
+- always-success deployment.toml file /home/tid/CKBuilder/week-01/deployment/devnet/always-success/deployment.toml generated successfully.
+- Migration json file /home/tid/CKBuilder/week-01/deployment/devnet/always-success/migrations/2026-11-18-021756.json generated successfully.
+- ✅ Successfully saved artifacts for always-success
+- 📄 Script info file generated: /home/tid/CKBuilder/week-01/deployment/scripts.json
+
+🎉 All deployment artifacts saved successfully!
