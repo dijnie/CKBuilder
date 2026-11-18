@@ -1,0 +1,123 @@
+tid@ct-ckb-env:~/CKBuilder/week-01/work$ npm run deploy:testnet
+
+> work@0.1.0 deploy:testnet
+> npm run build && npm run deploy -- --network testnet
+
+
+> work@0.1.0 build
+> node scripts/build-all.js
+
+Building 1 contract(s): hello-world
+
+📦 Building contract: hello-world
+Building hello-world from contracts/hello-world/src/index.ts...
+  📦 Bundling with esbuild with release settings...
+  🔧 Compiling to bytecode...
+  ✅ Contract 'hello-world' built successfully!
+     📄 JavaScript: dist/hello-world.js
+     🔗 Bytecode: dist/hello-world.bc
+✅ Successfully built: hello-world with release version
+
+🎉 All contracts built successfully!
+
+> work@0.1.0 deploy
+> node scripts/deploy.js --network testnet
+
+🚀 Deploying 1 contract(s): hello-world
+   📁 Target: dist
+   📄 Output: deployment
+   🌐 Network: testnet
+
+🚀 Deploying contracts...
+🖥️  Platform: linux
+
+🚀 Preparing to deploy 1 contract(s):
+   📄 hello-world.bc
+
+   📁 Deployment artifacts will be saved to: /home/tid/CKBuilder/week-01/work/deployment
+   🌐 Network: testnet
+   🔑 Using custom private key
+   🔄 Type ID: disabled (immutable)
+✔ Are you sure you want to deploy these contracts? Yes
+contract hello-world.bc deployed, tx hash: 0x897b1344d9c075eaa50432013ca38ce9c3602fa1d534262afec27c5a61bed51f
+wait for tx confirmed on-chain...
+tx committed.
+
+📦 Saving deployment artifacts for 1 contract(s)...
+- 📄 Saving artifacts for hello-world.bc...
+- hello-world.bc deployment.toml file /home/tid/CKBuilder/week-01/work/deployment/testnet/hello-world.bc/deployment.toml generated successfully.
+- Migration json file /home/tid/CKBuilder/week-01/work/deployment/testnet/hello-world.bc/migrations/2026-11-18-030636.json generatedsuccessfully.
+- ✅ Successfully saved artifacts for hello-world.bc
+- 📄 Script info file generated: /home/tid/CKBuilder/week-01/work/deployment/scripts.json
+
+🎉 All deployment artifacts saved successfully!
+Deploy process exited with code: 0
+
+✅ Successfully deployed all contracts!
+🎉 Deployment completed successfully!
+📁 Deployment artifacts saved to: deployment/
+
+💡 Next steps:
+   - Check the deployment artifacts in the deployment/ folder
+   - Run your tests to use the deployed contract scripts
+tid@ct-ckb-env:~/CKBuilder/week-01/work$ npm run test:only -- --runInBand tests/hello-world.mock.test.ts
+
+> work@0.1.0 test:only
+> jest --runInBand tests/hello-world.mock.test.ts
+
+(node:165545) ExperimentalWarning: WASI is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+  console.log
+
+    ╔════════════════════════════════════════════════════════
+    ║ Script Verification Summary
+    ║ Type: input lock script
+    ║ Index: 0
+    ╠════════════════════════════════════════════════════════
+    ║ STDOUT:
+    ║ Run result: 0
+    ║ All cycles: 539
+    ╠════════════════════════════════════════════════════════
+    ║ STDERR:
+    ║
+    ╚════════════════════════════════════════════════════════
+
+      at ScriptVerificationResult.reportSummary (node_modules/ckb-testtool/dist.commonjs/unittest/core.js:106:17)
+
+  console.log
+
+    ╔════════════════════════════════════════════════════════
+    ║ Script Verification Summary
+    ║ Type: input type script
+    ║ Index: 0
+    ╠════════════════════════════════════════════════════════
+    ║ STDOUT:
+    ║ Script log: [DEBUG] hello-world script loaded: {}
+    ║ Run result: 0
+    ║ All cycles: 3957269(3.8M)
+    ╠════════════════════════════════════════════════════════
+    ║ STDERR:
+    ║
+    ╚════════════════════════════════════════════════════════
+
+      at ScriptVerificationResult.reportSummary (node_modules/ckb-testtool/dist.commonjs/unittest/core.js:106:17)
+
+ PASS  tests/hello-world.mock.test.ts
+  hello-world contract
+    ✓ should execute successfully (737 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       1 passed, 1 total
+Snapshots:   0 total
+Time:        3.783 s
+Ran all test suites matching /tests\/hello-world.mock.test.ts/i.
+tid@ct-ckb-env:~/CKBuilder/week-01/work$ npm run use:testnet
+
+> work@0.1.0 use:testnet
+> node scripts/use-hello-world-testnet.js
+
+Contract deployment: 0x897b1344d9c075eaa50432013ca38ce9c3602fa1d534262afec27c5a61bed51f
+Estimated cycles: 5601907
+Transaction sent: 0x1aa3a43b00f9e3f03c1154ea4e1c2f6c4f72e36747724eed617b41d0b1e9aeb8
+Testnet Explorer: https://testnet.explorer.nervos.org/transaction/0x1aa3a43b00f9e3f03c1154ea4e1c2f6c4f72e36747724eed617b41d0b1e9aeb8
+Transaction committed in block: 23099987

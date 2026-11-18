@@ -1,0 +1,12 @@
+{
+  "name": "ckbuilder",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "wallet:testnet": "node testnet-wallet/gen-testnet-wallet.js"
+  },
+  "dependencies": {
+    "@ckb-ccc/core": "^1.14.0"
+  }
+}

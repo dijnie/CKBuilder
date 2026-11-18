@@ -1,0 +1,12 @@
+{
+  "cell_recipes": [
+    {
+      "name": "hello-world.bc",
+      "tx_hash": "0x897b1344d9c075eaa50432013ca38ce9c3602fa1d534262afec27c5a61bed51f",
+      "index": 0,
+      "occupied_capacity": 130500000000,
+      "data_hash": "0x68e6c55c513149a84bfb1d733cefda13cc8189a8cca2744e7487a6ce4167c0b2"
+    }
+  ],
+  "dep_group_recipes": []
+}

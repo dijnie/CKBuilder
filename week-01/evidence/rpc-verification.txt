@@ -1,6 +1,0 @@
-RPC: http://127.0.0.1:28114
-get_tip_block_number: 4340
-get_transaction: 0x98bf5d14c0138561b1c8e42c4260500dd15ebf9da8314a9a42067c80761a1b22 committed
-Block hash: 0x5deb41f19341703759758fe698b8b5724ad22c9e702e296f67cd0cb5072156e9
-get_live_cell: live | output index: 0
-Cell data matches local ELF: 936 bytes
