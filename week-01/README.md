@@ -3,7 +3,7 @@
 **Practice date:** November 18, 2026  
 **Focus:** Building, deploying, and testing the TypeScript `hello-world` script
 
-**Onboarding:** Local OffCKB setup and deployment were completed before submission. [Devnet startup screenshot](screenshot/offckb-devnet-running.png).
+**Onboarding:** Local OffCKB setup and deployment were completed before submission.
 
 ## Learning resources
 
@@ -22,6 +22,24 @@ CKB transactions consume live input Cells and create new output Cells. A Lock Sc
 | Use the deployed contract on Pudge | A separate transaction created output `0` with `hello-world` as its Type Script and was confirmed in block 23,099,987. The preflight estimate was 5,601,907 cycles for the transaction. | [Execution screenshot](screenshot/hello-world-testnet-execution.png), [Testnet Explorer](https://testnet.explorer.nervos.org/transaction/0x1aa3a43b00f9e3f03c1154ea4e1c2f6c4f72e36747724eed617b41d0b1e9aeb8) |
 
 [Full terminal log](evidence/testnet-terminal-log.txt) for the deployment, mock test, and transaction that used the deployed script.
+
+## Screenshots
+
+### OffCKB devnet startup
+
+![OffCKB terminal showing the local CKB node and RPC proxy ready](screenshot/offckb-devnet-running.png)
+
+### Pudge Testnet deployment
+
+![OffCKB terminal showing the hello-world deployment transaction was committed](screenshot/hello-world-testnet-deployment.png)
+
+### Mock test
+
+![Jest terminal showing one passing hello-world mock test and script return code zero](screenshot/hello-world-mock-test-pass.png)
+
+### Pudge Testnet execution
+
+![Terminal showing the transaction that uses hello-world committed in block 23099987](screenshot/hello-world-testnet-execution.png)
 
 ## Reproduce the exercises
 
