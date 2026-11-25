@@ -4,12 +4,12 @@
 
 From: ckt1qzda0cr08m85hc8jlnfp3zer7xulejywt49kt2rr0vthywaa50xwsq2hu2w9xzd308jeqle7y2cyaax3pxwqcmqmzgn78
 To:   ckt1qzda0cr08m85hc8jlnfp3zer7xulejywt49kt2rr0vthywaa50xwsqty20dphfsen9s6r26wwkmfwde9gjqh3sc6pftwp
-Sender balance before: 108472.99997573 CKB
+Sender balance before: 108279.99996613 CKB
 Inputs: 1, outputs: 2
   output 0: 100 CKB
-  output 1: 108372.99997109 CKB
-Estimated cycles: 1621767
-Transfer sent: 0xfe60f4fbf7c77f9611c7c1cd4debe3c3de25b2335b18b7a104294671a28042cc
-Testnet Explorer: https://testnet.explorer.nervos.org/transaction/0xfe60f4fbf7c77f9611c7c1cd4debe3c3de25b2335b18b7a104294671a28042cc
-Committed in block: 23180691
-Inspect with: npm run week2:inspect -- 0xfe60f4fbf7c77f9611c7c1cd4debe3c3de25b2335b18b7a104294671a28042cc
+  output 1: 108179.99996149 CKB
+Estimated cycles: 1641978
+Transfer sent: 0x49b1c756073ce939c120f40fe527cbe9e80621977f7908030ce2b67fc3b0dba1
+Testnet Explorer: https://testnet.explorer.nervos.org/transaction/0x49b1c756073ce939c120f40fe527cbe9e80621977f7908030ce2b67fc3b0dba1
+Committed in block: 23181356
+Inspect with: npm run week2:inspect -- 0x49b1c756073ce939c120f40fe527cbe9e80621977f7908030ce2b67fc3b0dba1
