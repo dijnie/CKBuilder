@@ -1,0 +1,14 @@
+
+> ckbuilder@1.0.0 week2:store
+> node week-02/work/scripts/store-data.js
+
+Message: "Hello CKB from CKBuilder Week 2!" (32 bytes)
+Data cell capacity: 93 CKB
+Estimated cycles: 1645928
+Store-data transaction sent: 0x9e82f33aa3aeb47aa25779c0fa89dada22322976acf46b2611b3f728bd143f33
+Testnet Explorer: https://testnet.explorer.nervos.org/transaction/0x9e82f33aa3aeb47aa25779c0fa89dada22322976acf46b2611b3f728bd143f33
+Committed in block: 23180695
+get_live_cell status: live
+Cell data (hex): 0x48656c6c6f20434b422066726f6d20434b4275696c646572205765656b203221
+Cell data (utf8): Hello CKB from CKBuilder Week 2!
+Inspect with: npm run week2:inspect -- 0x9e82f33aa3aeb47aa25779c0fa89dada22322976acf46b2611b3f728bd143f33

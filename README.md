@@ -4,6 +4,7 @@ A learning log for the CKBuilder program.
 
 - [Week 1 — OffCKB and the first CKB script deployment](week-01/README.md)
 - [Week 1 — TypeScript project](week-01/work/README.md)
+- [Week 2 — Transfer CKB, store data on a Cell, and inspect over RPC](week-02/README.md)
 
 ## Shared Pudge Testnet wallet
 

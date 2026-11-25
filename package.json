@@ -4,7 +4,10 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "wallet:testnet": "node testnet-wallet/gen-testnet-wallet.js"
+    "wallet:testnet": "node testnet-wallet/gen-testnet-wallet.js",
+    "week2:transfer": "node week-02/work/scripts/transfer.js",
+    "week2:store": "node week-02/work/scripts/store-data.js",
+    "week2:inspect": "node week-02/work/scripts/inspect-tx.js"
   },
   "dependencies": {
     "@ckb-ccc/core": "^1.14.0"

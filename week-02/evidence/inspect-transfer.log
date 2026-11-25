@@ -1,0 +1,20 @@
+
+> ckbuilder@1.0.0 week2:inspect
+> node week-02/work/scripts/inspect-tx.js 0xfe60f4fbf7c77f9611c7c1cd4debe3c3de25b2335b18b7a104294671a28042cc
+
+get_transaction 0xfe60f4fbf7c77f9611c7c1cd4debe3c3de25b2335b18b7a104294671a28042cc
+tx_status: committed, block_hash: 0x25baca8e9cc2d0a9b67a6d4feddefba9d4fa467361c09844d507aaa53a336d7a
+version: 0x0, cell_deps: 1, header_deps: 0, witnesses: 1
+  cell_dep 0: 0xf8de3bb47d…4aee5d37#0 (dep_group)
+
+inputs (1):
+  0: previous_output 0x1aa3a43b00…b1e9aeb8#1, since 0x0
+     spends 108472.99997573 CKB, lock{code_hash 0x9bd7e06f3e…bda3cce8, hash_type type, args 0x57e29c5309b179e5907f3e22b04ef4d1099c0c6c}
+
+outputs (2):
+  0: 100 CKB, lock{code_hash 0x9bd7e06f3e…bda3cce8, hash_type type, args 0x6453da1ba6199961a1ab4e75b6973725448178c3}, type null
+     outputs_data[0]: 0x (empty) — 0 bytes
+  1: 108372.99997109 CKB, lock{code_hash 0x9bd7e06f3e…bda3cce8, hash_type type, args 0x57e29c5309b179e5907f3e22b04ef4d1099c0c6c}, type null
+     outputs_data[1]: 0x (empty) — 0 bytes
+
+fee = inputs 108472.99997573 CKB - outputs 108472.99997109 CKB = 0.00000464 CKB
